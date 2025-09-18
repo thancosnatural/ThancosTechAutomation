@@ -9,6 +9,7 @@ import Services from "@/pages/Services";
 import TopNotchProjects from "@/pages/Projects";
 import BlogsSection from "@/pages/Blogs";
 import TechServicesLandingPage from "@/pages/TechServices";
+import AutomationHome from "@/pages/AutomationHome";
 
 // Lazy-loaded pages
 const Home = lazy(() => import("../pages/Home"));
@@ -25,6 +26,14 @@ const AppRoutes = () => {
           element={
             <ErrorBoundary>
               <Home />
+            </ErrorBoundary>
+          }
+        />
+         <Route
+          path="/automations"
+          element={
+            <ErrorBoundary>
+              <AutomationHome />
             </ErrorBoundary>
           }
         />

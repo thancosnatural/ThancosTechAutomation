@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
-const NAV_ITEMS = [
-  { label: "Home", to: "/" },
-  { label: "About us", to: "/about-us" },
-  { label: "Services", to: "/our-services" },
-  { label: "Projects", to: "/our-projects" },
-   { label: "Tech Services", to: "/tech-services" },
-  { label: "Blogs", to: "/blogs" },
-  { label: "Careers", to: "/careers" },
+const AUTOMATION_NAV_ITEMS = [
+  { label: "Home", to: "/automations" },
+  { label: "About us", to: "/automations/about-us" },
+  { label: "Services", to: "/automations/our-services" },
+  { label: "Projects", to: "/automations/our-projects" },
+  { label: "Blogs", to: "/automations/blogs" },
+  { label: "Careers", to: "/automations/careers" },
+];
+
+const TECH_NAV_ITEMS = [
+  { label: "Home", to: "/tech-services" }, // if your route is /techservices, change this & others below
+  { label: "About us", to: "/tech-services/about-us" },
+  { label: "Services", to: "/tech-services/our-services" },
+  { label: "Projects", to: "/tech-services/our-projects" },
+  { label: "Careers", to: "/tech-services/careers" },
 ];
 
 const desktopClass = ({ isActive }) =>
@@ -27,13 +34,24 @@ const mobileClass = ({ isActive }) =>
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // robust section detection
+  const isAutomations = pathname.startsWith("/automations");
+  const isTech =
+    pathname.startsWith("/tech-services") || pathname.startsWith("/techservices");
+
+  const NAV_ITEMS = isAutomations ? AUTOMATION_NAV_ITEMS : TECH_NAV_ITEMS;
+
+  // Send logo to the current section's home (nice UX)
+  const logoHref = isAutomations ? "/automations" : isTech ? "/tech-services" : "/";
 
   return (
     <header className="bg-neutral-950 text-neutral-200 w-full">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Left: Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to={logoHref} className="flex items-center gap-3 group">
             <span className="h-7 w-7 rounded-sm bg-purple-700 group-hover:bg-purple-600 transition-colors" />
             <span className="text-sm font-medium tracking-wide text-neutral-300 group-hover:text-white">
               LOGO
@@ -44,7 +62,12 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
-                <NavLink to={item.to} className={desktopClass} end>
+                <NavLink
+                  to={item.to}
+                  className={desktopClass}
+                  // only Home should be exact; others should stay active on nested routes
+                  end={item.label === "Home"}
+                >
                   {item.label}
                 </NavLink>
               </li>
@@ -87,7 +110,7 @@ export default function Navbar() {
                   <NavLink
                     to={item.to}
                     className={mobileClass}
-                    end
+                    end={item.label === "Home"}
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
