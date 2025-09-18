@@ -270,6 +270,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HOME_IMAGES } from "@/constants/branding";
 
+
 /* ---------- Small, reusable typewriter ---------- */
 function Typewriter({
   text = "",
@@ -328,6 +329,7 @@ const DEFAULT_SLIDES = [
       "Thancos Tech is a global services based in India crafting research-driven and user-friendly digital products.",
     cta: { label: "Contact Now", href: "/contact-us" },
     video: HOME_IMAGES.Video1,
+    // video: '/assets/Videos/ThancosTechBg.mp4',
     muted: true,
     loop: true,
     controls: false,

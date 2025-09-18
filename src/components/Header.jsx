@@ -32,6 +32,8 @@ const mobileClass = ({ isActive }) =>
       : "text-neutral-300 hover:text-white hover:bg-neutral-900",
   ].join(" ");
 
+
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
@@ -51,11 +53,15 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Left: Logo */}
-          <Link to={logoHref} className="flex items-center gap-3 group">
-            <span className="h-7 w-7 rounded-sm bg-purple-700 group-hover:bg-purple-600 transition-colors" />
-            <span className="text-sm font-medium tracking-wide text-neutral-300 group-hover:text-white">
-              LOGO
-            </span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src='/assets/ThancosLogo3.webp'
+              alt="Thancos Tech"
+              className="w-30 rounded-md object-contain shadow-sm transition
+               group-hover:ring-white/30"
+              loading="eager"
+              decoding="async"
+            />
           </Link>
 
           {/* Center: Desktop menu */}

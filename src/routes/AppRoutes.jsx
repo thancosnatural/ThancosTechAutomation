@@ -1,7 +1,11 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+// src/routes/AppRoutes.jsx
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { lazy } from "react";
 import MainLayout from "../layouts/MainLayout";
 import ErrorBoundary from "../components/ErrorBoundory";
+
+// Pages
+const Home = lazy(() => import("../pages/Home"));
 import AboutUs from "@/pages/AboutUs";
 import ContactUs from "@/pages/ContactUs";
 import NotFound from "@/pages/NotFound";
@@ -11,16 +15,13 @@ import BlogsSection from "@/pages/Blogs";
 import TechServicesLandingPage from "@/pages/TechServices";
 import AutomationHome from "@/pages/AutomationHome";
 
-// Lazy-loaded pages
-const Home = lazy(() => import("../pages/Home"));
-// const NotFound = lazy(() => import("../pages/NotFound"));
-
 const AppRoutes = () => {
   const location = useLocation();
 
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="/" element={<MainLayout />}>
+        {/* Root home */}
         <Route
           index
           element={
@@ -29,63 +30,125 @@ const AppRoutes = () => {
             </ErrorBoundary>
           }
         />
-         <Route
-          path="/automations"
-          element={
-            <ErrorBoundary>
-              <AutomationHome />
-            </ErrorBoundary>
-          }
-        />
+
+        {/* ================= Automations section ================= */}
+        <Route path="automations">
+          <Route
+            index
+            element={
+              <ErrorBoundary>
+                <AutomationHome />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="about-us"
+            element={
+              <ErrorBoundary>
+                <AboutUs />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="our-services"
+            element={
+              <ErrorBoundary>
+                <Services />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="our-projects"
+            element={
+              <ErrorBoundary>
+                <TopNotchProjects />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="blogs"
+            element={
+              <ErrorBoundary>
+                <BlogsSection />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="careers"
+            element={
+              <ErrorBoundary>
+                <NotFound /> {/* TODO: replace with Careers page when ready */}
+              </ErrorBoundary>
+            }
+          />
+        </Route>
+
+        {/* ================= Tech Services section (hyphenated) ================= */}
+        <Route path="tech-services">
+          <Route
+            index
+            element={
+              <ErrorBoundary>
+                <TechServicesLandingPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="about-us"
+            element={
+              <ErrorBoundary>
+                <AboutUs />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="our-services"
+            element={
+              <ErrorBoundary>
+                <Services />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="our-projects"
+            element={
+              <ErrorBoundary>
+                <TopNotchProjects />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="blogs"
+            element={
+              <ErrorBoundary>
+                <BlogsSection />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="careers"
+            element={
+              <ErrorBoundary>
+                <NotFound /> {/* TODO: replace with Careers page when ready */}
+              </ErrorBoundary>
+            }
+          />
+        </Route>
+
+        {/* Alias without hyphen → redirect to hyphenated base */}
+        <Route path="techservices/*" element={<Navigate to="/tech-services" replace />} />
+
+        {/* Shared top-level */}
         <Route
-          path="/about-us"
-          element={
-            <ErrorBoundary>
-              <AboutUs />
-            </ErrorBoundary>
-          }
-        />
-        <Route
-          path="/our-services"
-          element={
-            <ErrorBoundary>
-              <Services />
-            </ErrorBoundary>
-          }
-        />
-        <Route
-          path="/our-projects"
-          element={
-            <ErrorBoundary>
-              <TopNotchProjects />
-            </ErrorBoundary>
-          }
-        />
-        <Route
-          path="/tech-services"
-          element={
-            <ErrorBoundary>
-              <TechServicesLandingPage />
-            </ErrorBoundary>
-          }
-        />
-        <Route
-          path="/contact-us"
+          path="contact-us"
           element={
             <ErrorBoundary>
               <ContactUs />
             </ErrorBoundary>
           }
         />
-         <Route
-          path="/blogs"
-          element={
-            <ErrorBoundary>
-              <BlogsSection />
-            </ErrorBoundary>
-          }
-        />
 
+        {/* 404 */}
         <Route
           path="*"
           element={
@@ -100,5 +163,3 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
-
-
