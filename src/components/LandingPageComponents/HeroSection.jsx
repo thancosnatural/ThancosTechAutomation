@@ -66,7 +66,7 @@ const DEFAULT_SLIDES = [
     subtitle:
       "Thancos Tech is a global services based in India crafting research-driven and user-friendly digital products.",
     cta: { label: "Contact Now", href: "/contact-us" },
-    video: HOME_IMAGES.Video,
+    video: HOME_IMAGES.Video1,
     muted: true,
     loop: true,
     controls: false,
@@ -79,7 +79,7 @@ const DEFAULT_SLIDES = [
       "From prototypes to production, we design, ship, and scale delightful experiences.",
     cta: { label: "See Projects", href: "/our-projects" },
     image: "/images/hero-ai.jpg",
-    video: HOME_IMAGES.Video,
+    video: HOME_IMAGES.Video2,
     muted: true,
     loop: true,
     controls: false,

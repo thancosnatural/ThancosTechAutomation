@@ -24,7 +24,9 @@ export const HOME_IMAGES = {
 
   CallToUs: import.meta.env.VITE_CALLTOUS || "",
 
-  Video: import.meta.env.VITE_THANCOS_TECH_VIDEO || "",
+  Video1: import.meta.env.VITE_THANCOS_TECH_VIDEO1 || "",
+  Video2: import.meta.env.VITE_THANCOS_TECH_VIDEO2 || "",
+  Video3: import.meta.env.VITE_THANCOS_TECH_VIDEO3 || "",
 
 };
 
