@@ -14,7 +14,6 @@ const TECH_NAV_ITEMS = [
   { label: "Home", to: "/tech-services" }, // if your route is /techservices, change this & others below
   { label: "About us", to: "/tech-services/about-us" },
   { label: "Services", to: "/tech-services/our-services" },
-  { label: "Projects", to: "/tech-services/our-projects" },
   { label: "Careers", to: "/tech-services/careers" },
 ];
 
@@ -55,7 +54,7 @@ export default function Navbar() {
           {/* Left: Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src='/assets/ThancosLogo3.webp'
+              src='/assets/ThancosLogo1.webp'
               alt="Thancos Tech"
               className="w-30 rounded-md object-contain shadow-sm transition
                group-hover:ring-white/30"

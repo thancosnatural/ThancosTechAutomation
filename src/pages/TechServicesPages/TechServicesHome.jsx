@@ -1,23 +1,26 @@
 import ValuesThatDefineUs from "@/components/AboutUsComponents/ValuesDefineUs";
+import HeroTechRated from "@/components/HeroSpotlight";
 import CTAInvite from "@/components/LandingPageComponents/CTA";
+import FAQSection from "@/components/LandingPageComponents/FAQ";
 import RecentTechProjects from "@/components/LandingPageComponents/TechProjects";
 import TechServices from "@/components/LandingPageComponents/TechServices";
 import TopNotchServices from "@/components/ProjectsComponents/TopNotchServices";
 import TechBanner from "@/components/TechServicesComponents/TechBanner";
+import Testimonials from "@/components/Testimonials";
 
 const DEFAULT_GALLERY = [
-  {
-    src: "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop",
-    alt: "India chip silicon board",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
-    alt: "Gears automation tablet",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
-    alt: "CNC machining center",
-  },
+    {
+        src: "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop",
+        alt: "India chip silicon board",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+        alt: "Gears automation tablet",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
+        alt: "CNC machining center",
+    },
 ];
 
 const DEFAULT_FEATURES = [
@@ -80,17 +83,48 @@ export default function TechServicesLandingPage() {
     return (
         <main className="min-h-screen bg-neutral-950 text-white">
 
-            <TechBanner />
-
-            <TechServices />
+            <HeroTechRated
+                line1="India’s Top Rated"
+                highlight="Digital"
+                line2Rest="Transformations Company"
+                chips={["WEB DEVELOPMENT", "UX/UI DESIGN", "GRAPHIC DESIGN"]}
+            />
 
             <RecentTechProjects />
 
-            <TopNotchServices data={topNotchTechServices} />
+            <Testimonials />
 
-            <ValuesThatDefineUs />
+            <FAQSection data={DEFAULT_FAQS} />
 
-            <CTAInvite data={CTATech} />
         </main>
     );
 }
+
+
+
+const DEFAULT_FAQS = [
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "We provide industrial automation, PLC/HMI, robotics integration, and commissioning, along with digital services like web/mobile apps, AI/ML, and cloud solutions.",
+    },
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "Engagements range from fixed-scope builds to dedicated teams. We tailor process, cadence, and tooling to your context.",
+    },
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "We start with discovery, define requirements, propose timelines and costs, then move into iterative delivery with regular demos.",
+    },
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "Yes—support SLAs are available. We handle maintenance, monitoring, and optimizations post-launch.",
+    },
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "Pricing depends on scope and complexity. We offer both fixed-price and time-and-materials models.",
+    },
+    {
+        q: "What Services does the Thancos tech offers ?",
+        a: "We collaborate with your internal stakeholders, ensuring knowledge transfer and transparency throughout.",
+    },
+];

@@ -1,11 +1,5 @@
 import { ArrowLeft } from "lucide-react";
 
-/**
- * Who We Are + Our Mission — simple text blocks on dark bg
- * - Arrow badge headings
- * - Two stacked sections with generous spacing
- * - Content is editable via props
- */
 export default function OurMission({
   missionTitle = "OUR MISSION",
   mission =
@@ -13,7 +7,7 @@ export default function OurMission({
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#101112]">
-      <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 lg:px-12 lg:py-14">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12 lg:py-14">
       
         {/* divider spacing */}
         <div className="h-10" />

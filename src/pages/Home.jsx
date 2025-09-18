@@ -102,9 +102,8 @@ function ButtonBadge({
         <span className="text-xs sm:text-sm font-semibold tracking-wide text-white/90 group-hover:text-white">
           {buttonAlt}
         </span>
-          <ArrowRight className="h-4 w-4 arrow" />
+        <ArrowRight className="h-4 w-4 arrow" />
 
-        {/* gradient rim */}
         <span
           className="pointer-events-none absolute -inset-px rounded-full opacity-70 transition-opacity group-hover:opacity-100"
           style={{
@@ -133,7 +132,7 @@ export default function ServiceBoxes({
   bgPoster = "/assets/videos/hero-bg.jpg",
   logoSrc = "/assets/ThancosLogo3.webp",
   logoAlt = "Thancos Tech",
-  logoHref = "/", // change to "/automations" or a landing page if you prefer
+  logoHref = "/",
 }) {
   const navigate = useNavigate();
 

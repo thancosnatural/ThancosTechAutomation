@@ -2,9 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, Plus } from "lucide-react";
 
 export default function FAQSection({
-  title = "FAQ",
-  tagline = "Let us help you quickly ease your queries and make informed decisions.",
-  items = DEFAULT_FAQ,
+  data,
   allowMultiple = false,
 }) {
   const [open, setOpen] = useState(allowMultiple ? new Set() : -1);
@@ -23,19 +21,19 @@ export default function FAQSection({
 
   return (
     <section className="relative w-full overflow-hidden bg-[#0f0f10]">
-      <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-6 flex items-center gap-3">
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
             <ArrowLeft className="h-4 w-4 -rotate-45 text-orange-400" />
           </span>
-          <h2 className="text-lg font-semibold tracking-tight text-white">{title}</h2>
+          <h2 className="text-lg font-semibold tracking-tight text-white">FAQ's</h2>
         </div>
-        <p className="mb-6 text-[13.5px] leading-6 text-white/70 sm:text-sm">{tagline}</p>
+        <p className="mb-6 text-[13.5px] leading-6 text-white/70 sm:text-sm">Let us help you quickly ease your queries and make informed decisions.</p>
 
         {/* List */}
         <div className="divide-y divide-white/10">
-          {items.map((it, i) => (
+          {data.map((it, i) => (
             <div key={i} className="py-3">
               <button
                 onClick={() => toggle(i)}
@@ -64,30 +62,3 @@ export default function FAQSection({
     </section>
   );
 }
-
-const DEFAULT_FAQ = [
-  {
-    q: "What Services does the Thancos tech offers ?",
-    a: "We provide end‑to‑end product design and development: Websites, Web Apps, Mobile Apps, Dashboard & Data Viz, UX Research, and Brand/Graphic Design.",
-  },
-  {
-    q: "How soon can you start a project?",
-    a: "Typically within 1–2 weeks after scope alignment. We can accelerate for priority engagements.",
-  },
-  {
-    q: "Do you work with startups as well as enterprises?",
-    a: "Yes — our teams are structured for both rapid iteration (startups) and compliance‑heavy delivery (enterprise).",
-  },
-  {
-    q: "What tech stack do you use?",
-    a: "React, Next.js, Node/Express, PostgreSQL, GraphQL/REST, AWS, and modern CI/CD. For mobile: React Native/Flutter.",
-  },
-  {
-    q: "Do you offer maintenance & support?",
-    a: "We provide flexible retainers for updates, monitoring, and feature iterations post‑launch.",
-  },
-  {
-    q: "Can you work with our in‑house team?",
-    a: "Absolutely. We augment existing teams, share standards, and co‑own delivery milestones.",
-  },
-];

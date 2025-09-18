@@ -1,11 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 
-/**
- * Values That Define Us — 6‑up grid with large numerals
- * - Heading with arrow glyph
- * - Three columns on desktop (2 on md, 1 on mobile)
- * - Optional badge support (pink pill)
- */
+
 export default function ValuesThatDefineUs({
   title = "VALUES THAT DEFINE US",
   items = DEFAULT_VALUES,
@@ -48,12 +43,6 @@ function ValueCard({ index, heading, body, badge }) {
       {/* Body */}
       <p className="mt-3 text-[13.5px] leading-6 text-white/70 sm:text-[14px]">{body}</p>
 
-      {/* Optional badge */}
-      {badge ? (
-        <span className="mt-3 inline-block rounded-md bg-pink-500 px-2.5 py-1 text-[12px] font-semibold text-white shadow">
-          {badge}
-        </span>
-      ) : null}
     </article>
   );
 }
@@ -68,7 +57,6 @@ const DEFAULT_VALUES = [
     heading: "Innovation with Purpose",
     body:
       "We embrace creativity and cutting‑edge technology not just for novelty, but to solve real problems and deliver measurable results.",
-    badge: "Thancos Designer",
   },
   {
     heading: "Collaboration at Heart",
@@ -91,16 +79,3 @@ const DEFAULT_VALUES = [
       "Technology evolves fast—and so do we. We continuously learn, adapt, and challenge ourselves to set higher standards.",
   },
 ];
-
-/* Usage
-<ValuesThatDefineUs />
-
-// Or pass your own values:
-<ValuesThatDefineUs
-  items={[
-    { heading: 'User First', body: '…' },
-    { heading: 'Innovation', body: '…', badge: 'Your Badge' },
-    // ...
-  ]}
-/>
-*/

@@ -7,6 +7,9 @@ export default function FactoryAndHMISections({
   factory = FACTORY_CONTENT,
   hmi = HMI_CONTENT,
   plc = INDUSTRIAL_PLC_CONTENT,
+  roboticsProgramming = ROBOTICS_PROGRAMMING_CONTENT,
+  specialPurpose = SPECIAL_PURPOSE_CONTENT,
+  completeTurnkey = COMPLETE_TURNKEY_CONTENT
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#0f0f10] px-4 py-8 sm:px-6 md:py-10 lg:px-10 lg:py-12">
@@ -15,6 +18,12 @@ export default function FactoryAndHMISections({
       <ServiceGroup {...hmi} reverse />
       <div className="h-8 sm:h-10" />
       <ServiceGroup {...plc} />
+      <div className="h-8 sm:h-10" />
+      <ServiceGroup {...roboticsProgramming} reverse />
+      <div className="h-8 sm:h-10" />
+      <ServiceGroup {...specialPurpose} />
+      <div className="h-8 sm:h-10" />
+      <ServiceGroup {...completeTurnkey} reverse />
     </section>
   );
 }
@@ -82,15 +91,21 @@ const FACTORY_CONTENT = {
     {
       label: "Partial Process Automation",
       body:
-        "Automate critical sub‑processes to remove bottlenecks and improve throughput without a full line redesign.",
+        "For targeted improvements, we implement partial process automation to optimize specific aspects of your production, enhancing efficiency and reducing operational costs",
     },
     {
       label: "Single Automated Machines",
       body:
-        "Purpose‑built stations for tasks like assembly, inspection, or packaging with PLC/vision integration.",
+        "We design and integrate individual automated machines that perform dedicated tasks with precision and reliability, contributing to your overall production process.",
     },
-    { label: "SCADA", body: "Real‑time monitoring and control with alarms, historian, and reporting." },
-    { label: "DCS", body: "Distributed Control Systems for complex, multi‑loop process industries." },
+    {
+      label: "SCADA",
+      body: "SCADA, a key component of our Factory Automation services, provides real-time control and monitoring for enhanced operational efficiency"
+    },
+    {
+      label: "DCS",
+      body: "DCS, a vital aspect of our Factory Automation services, enhances complex process control and monitoring, ensuring seamless efficiency."
+    },
   ],
 };
 
@@ -149,6 +164,95 @@ const INDUSTRIAL_PLC_CONTENT = {
     {
       label: "Digital Input Modules",
       body: "These modules read digital signals (on/off or high/low) from sensors or switches."
+    },
+  ],
+};
+
+
+const ROBOTICS_PROGRAMMING_CONTENT = {
+  title: "Robotics Programming Integration",
+  sub:
+    "At Elextrio Automation, we specialize in Robotics Programming and Integration to elevate your industrial processes. Our service includes",
+  image: SERVICES_IMAGES.RoboticProgramming,
+  items: [
+    {
+      label: "Precision Programming",
+      body:
+        "We customize robotic systems for your specific needs, ensuring precise movements and optimal task execution.",
+    },
+    {
+      label: "Seamless Integration",
+      body:
+        "Our team seamlessly integrates robots into your workflow, enhancing efficiency and productivity.",
+    },
+    {
+      label: "Varsatile Application",
+      body: "From manufacturing to logistics, our expertise spans various industries, offering robotic solutions for diverse applications."
+    },
+
+  ],
+};
+
+
+const SPECIAL_PURPOSE_CONTENT = {
+  title: "Special Purpose Machine (Turnkey)",
+  sub:
+    "Elextrio Automation specializes in delivering turnkey solutions for Special Purpose Machines (SPMs). Our comprehensive service includes",
+  image: SERVICES_IMAGES.SpecialPurpose,
+  items: [
+    {
+      label: "Customized Design",
+      body:
+        "We design SPMs tailored to your unique manufacturing or production needs, ensuring efficiency and precision.",
+    },
+    {
+      label: "Manufacturing",
+      body:
+        "Our team handles the fabrication, assembly,and integration of streamlining the entire process.",
+    },
+    {
+      label: "Testing and Validation",
+      body: "Rigorous testing and validation processes ensure that your SPM operates flawlessly, meeting the highest quality standards."
+    },
+    {
+      label: "Installation and Traning",
+      body: "We provide on-site installation, operator training, and ongoing support to seamlessly integrate SPMs into your operations."
+    },
+
+  ],
+};
+
+const COMPLETE_TURNKEY_CONTENT = {
+  title: "Complete Turnkey Solutions",
+  sub:
+    "At Elextrio Automation, we offer comprehensive turnkey solutions designed to streamline your industrial processes from start to finish.",
+  image: SERVICES_IMAGES.CompleteTurnkey,
+  items: [
+    {
+      label: "Experienced Team",
+      body:
+        "Our team of experienced engineers and experts brings a wealth of knowledge and innovation to every project.",
+    },
+    {
+      label: "Onsite Support",
+      body:
+        "We provide on-site installation, training, and ongoing support to ensure a smooth transition and continued success.",
+    },
+    {
+      label: "Cost Effectiveness",
+      body: "Our robust design processes and efficient project management help control costs, making our turnkey solutions a cost-effective choice."
+    },
+    {
+      label: "Quality Assurance",
+      body: "We implement rigorous testing and quality control measures throughout the project to deliver high-quality, reliable solutions."
+    },
+    {
+      label: "Project Management",
+      body: "We handle every phase of your project, from design to manufacturing, and implementation, ensuring a seamless process."
+    },
+    {
+      label: "Proven Building Blocks",
+      body: "We leverage a portfolio of proven building blocks, developed through years of experience, as the foundation for your custom solution."
     },
   ],
 };

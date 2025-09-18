@@ -59,8 +59,37 @@ export default function AutomationHome() {
 
       <CTAInvite data={CTAAutomation} />
 
-      <FAQSection />
+      <FAQSection data={DEFAULT_FAQ}/>
 
     </div>
   );
 }
+
+
+
+const DEFAULT_FAQ = [
+  {
+    q: "What Services does the Thancos tech offers ?",
+    a: "We provide end‑to‑end product design and development: Websites, Web Apps, Mobile Apps, Dashboard & Data Viz, UX Research, and Brand/Graphic Design.",
+  },
+  {
+    q: "How soon can you start a project?",
+    a: "Typically within 1–2 weeks after scope alignment. We can accelerate for priority engagements.",
+  },
+  {
+    q: "Do you work with startups as well as enterprises?",
+    a: "Yes — our teams are structured for both rapid iteration (startups) and compliance‑heavy delivery (enterprise).",
+  },
+  {
+    q: "What tech stack do you use?",
+    a: "React, Next.js, Node/Express, PostgreSQL, GraphQL/REST, AWS, and modern CI/CD. For mobile: React Native/Flutter.",
+  },
+  {
+    q: "Do you offer maintenance & support?",
+    a: "We provide flexible retainers for updates, monitoring, and feature iterations post‑launch.",
+  },
+  {
+    q: "Can you work with our in‑house team?",
+    a: "Absolutely. We augment existing teams, share standards, and co‑own delivery milestones.",
+  },
+];

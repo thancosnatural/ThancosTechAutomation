@@ -1,14 +1,7 @@
 import { ABOUT_IMAGES } from "@/constants/branding";
 
-/**
- * Our Approach — two‑column layout (image + bullets)
- * - Left: large rounded image
- * - Right: bold title and bullet points with arrow icons
- * - Content is dynamic via props
- */
 export default function OurApproach({
   title = "Our Approach",
-  image = "https://images.unsplash.com/photo-1581091012184-7c54b1929a6b?q=80&w=1600&auto=format&fit=crop",
   points = DEFAULT_POINTS,
 }) {
   return (
@@ -63,17 +56,3 @@ const DEFAULT_POINTS = [
       "We stay on the cutting edge of technology, incorporating the latest advancements in automation to deliver innovative solutions.",
   },
 ];
-
-/* Usage
-<OurApproach />
-
-// Custom
-<OurApproach
-  image="/assets/robots.jpg"
-  points=[
-    { lead: 'Precision', copy: '…' },
-    { lead: 'Innovation', copy: '…' },
-    { lead: 'Safety', copy: '…' },
-  ]
-/>
-*/

@@ -61,6 +61,10 @@ export const SERVICES_IMAGES = {
   OurFactory: import.meta.env.VITE_OUR_FACTORY || "",
   HMI: import.meta.env.VITE_HMI || "",
 
+  RoboticProgramming: import.meta.env.VITE_ROBOTIC_PROGRAMMING || "",
+  SpecialPurpose: import.meta.env.VITE_SPECIAL_PURPOSE || "",
+  CompleteTurnkey: import.meta.env.VITE_COMPELTE_TURNKEY || "",
+
   MachineDesign: import.meta.env.VITE_MACHINE_DESIGN || "",
   Product: import.meta.env.VITE_PRODUCT || "",
   Material: import.meta.env.VITE_MATERIAL || "",
@@ -78,3 +82,10 @@ export const SERVICES_IMAGES = {
   Rockwell: import.meta.env.VITE_ROCKWELL || "",
 
 };
+
+export const PROJECTS_IMAGES = {
+
+  ProjectsAutomation: import.meta.env.VITE_PROJECTS_AUTOMATION || ""
+
+};
+

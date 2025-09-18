@@ -6,14 +6,16 @@ import ErrorBoundary from "../components/ErrorBoundory";
 
 // Pages
 const Home = lazy(() => import("../pages/Home"));
-import AboutUs from "@/pages/AboutUs";
+import AboutUs from "@/pages/AutomationPages/AboutUs";
 import ContactUs from "@/pages/ContactUs";
 import NotFound from "@/pages/NotFound";
-import Services from "@/pages/Services";
-import TopNotchProjects from "@/pages/Projects";
-import BlogsSection from "@/pages/Blogs";
-import TechServicesLandingPage from "@/pages/TechServices";
-import AutomationHome from "@/pages/AutomationHome";
+import Services from "@/pages/AutomationPages/Services";
+import TopNotchProjects from "@/pages/AutomationPages/Projects";
+import BlogsSection from "@/pages/AutomationPages/Blogs";
+import TechServicesLandingPage from "@/pages/TechServicesPages/TechServicesHome";
+import AutomationHome from "@/pages/AutomationPages/AutomationHome";
+import AboutTech from "@/pages/TechServicesPages/AboutUs";
+import OurTechServices from "@/pages/TechServicesPages/Services";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -97,7 +99,7 @@ const AppRoutes = () => {
             path="about-us"
             element={
               <ErrorBoundary>
-                <AboutUs />
+                <AboutTech />
               </ErrorBoundary>
             }
           />
@@ -105,7 +107,7 @@ const AppRoutes = () => {
             path="our-services"
             element={
               <ErrorBoundary>
-                <Services />
+                <OurTechServices />
               </ErrorBoundary>
             }
           />

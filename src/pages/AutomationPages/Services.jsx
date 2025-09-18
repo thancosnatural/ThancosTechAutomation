@@ -17,19 +17,19 @@ const INDUSTRIAL_AUTOMATION_DEFAULT_ITEMS = [
   {
     title: "Programmable Automation",
     body:
-      "Flexible systems configured through software—perfect for batch processes and product variants.",
+      "Leveraging the power of Programmable Logic Controllers (PLCs), we provide flexible solutions to control and monitor machinery and processes. Our programmable automation solutions adapt to your evolving needs.",
     image: SERVICES_IMAGES.Programmable
   },
   {
     title: "Flexible Automation",
     body:
-      "Rapid changeovers and adaptable cells that keep productivity high across varying SKUs and volumes.",
+      "For tasks that require adaptability and versatility, our flexible automation solutions are tailored to meet the dynamic demands of your operations. We ensure seamless transitions and efficient production.",
     image: SERVICES_IMAGES.Flexible
   },
   {
     title: "Integrated Automation",
     body:
-      "End‑to‑end integration of robots, PLC/SCADA, vision, and MES/ERP for a single pane of glass.",
+      "Our integrated automation services focus on connecting and harmonizing various systems and processes within your facility. This holistic approach enhances overall efficiency and enables data-driven decision-making.",
     image: SERVICES_IMAGES.Integrated
   },
 ];
@@ -130,8 +130,6 @@ export default function Services() {
       <IndustrialAutomationServices data={IndustrialElectrical} />
 
       <PlcManufacturers />
-
-      <RoboticsProgrammingIntegration />
 
     </section>
   );
